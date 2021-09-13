@@ -1,10 +1,15 @@
 import React from "react";
 
-function Button({ submitButton, children }) {
+function Button({ submitButton, children, disabled = false, ...props }) {
   return (
-    <div className="btn btn-primary" type={submitButton ? "submit" : "button"}>
+    <button
+      {...props}
+      className="btn btn-primary"
+      type={submitButton ? "submit" : "button"}
+      disabled={disabled}
+    >
       {children}
-    </div>
+    </button>
   );
 }
 
